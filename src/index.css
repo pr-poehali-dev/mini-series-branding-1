@@ -4,37 +4,37 @@
 
 @layer base {
   :root {
-    --background: 24 15% 6%;
-    --foreground: 40 30% 92%;
+    --background: 20 12% 5%;
+    --foreground: 40 22% 93%;
 
-    --card: 24 18% 9%;
-    --card-foreground: 40 30% 92%;
+    --card: 20 12% 5%;
+    --card-foreground: 40 22% 93%;
 
-    --popover: 24 18% 9%;
-    --popover-foreground: 40 30% 92%;
+    --popover: 20 14% 7%;
+    --popover-foreground: 40 22% 93%;
 
-    --primary: 8 55% 42%;
-    --primary-foreground: 40 40% 96%;
+    --primary: 350 42% 20%;
+    --primary-foreground: 40 30% 95%;
 
-    --secondary: 24 15% 14%;
-    --secondary-foreground: 40 30% 92%;
+    --secondary: 20 10% 10%;
+    --secondary-foreground: 40 22% 93%;
 
-    --muted: 24 12% 16%;
-    --muted-foreground: 35 15% 62%;
+    --muted: 20 8% 11%;
+    --muted-foreground: 35 10% 58%;
 
-    --accent: 30 45% 58%;
-    --accent-foreground: 24 20% 8%;
+    --accent: 38 38% 62%;
+    --accent-foreground: 20 20% 8%;
 
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 40 40% 96%;
+    --destructive: 0 55% 32%;
+    --destructive-foreground: 40 30% 95%;
 
-    --border: 30 20% 20%;
-    --input: 30 20% 20%;
-    --ring: 30 45% 58%;
+    --border: 30 12% 16%;
+    --input: 30 12% 16%;
+    --ring: 38 38% 62%;
 
-    --gold: 32 48% 62%;
+    --gold: 38 38% 62%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,12 +100,14 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Golos Text", sans-serif;
+    font-weight: 300;
   }
   h1,
   h2,
   h3,
   .font-serif {
     font-family: "Cormorant", serif;
+    font-weight: 400;
   }
 }
 
@@ -124,20 +126,21 @@
   }
   .film-grain::after {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
+    z-index: 40;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-    opacity: 0.05;
+    opacity: 0.035;
     pointer-events: none;
     mix-blend-mode: overlay;
   }
   .animate-fade-up {
-    animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(24px);
     }
     to {
       opacity: 1;
@@ -146,10 +149,23 @@
   }
   .hover-lift {
     transition:
-      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.4s ease;
+      opacity 0.5s ease,
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .hover-lift:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
+  }
+  .thin-rule {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--gold) / 0.5),
+      transparent
+    );
+  }
+  .thin-rule-left {
+    height: 1px;
+    background: linear-gradient(to right, hsl(var(--gold) / 0.6), transparent);
   }
 }

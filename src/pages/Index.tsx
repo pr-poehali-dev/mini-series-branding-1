@@ -4,21 +4,21 @@ const CDN = 'https://cdn.poehali.dev/projects/618b8948-269c-40a7-94b5-dcdcf63087
 const HERO = `${CDN}/portrait-1.jpg`;
 const IMG_COFFEE = `${CDN}/portrait-2.jpg`;
 const IMG_SOLUTION = `${CDN}/portrait-3.jpg`;
-const IMG_DESK = `${CDN}/portrait-5.jpg`;
+const IMG_DESK = `${CDN}/portrait-4.jpg`;
+const IMG_ACTION = `${CDN}/portrait-5.jpg`;
 
 const nav = [
-  { label: 'О НАС', href: '#about' },
-  { label: 'КАК ЭТО РАБОТАЕТ', href: '#how' },
-  { label: 'КЕЙСЫ', href: '#cases' },
-  { label: 'ОТЗЫВЫ', href: '#reviews' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'О нас', href: '#about' },
+  { label: 'Процесс', href: '#process' },
+  { label: 'Кейсы', href: '#cases' },
+  { label: 'Контакты', href: '#action' },
 ];
 
 const heroFeatures = [
-  { icon: 'Clapperboard', title: 'ЕДИНАЯ', sub: 'СЮЖЕТНАЯ ЛИНИЯ' },
-  { icon: 'Heart', title: 'ЭМОЦИОНАЛЬНАЯ', sub: 'СВЯЗЬ' },
-  { icon: 'Users', title: 'БОЛЬШЕ КЛИЕНТОВ', sub: 'И УЗНАВАЕМОСТИ' },
-  { icon: 'TrendingUp', title: 'СИСТЕМНОЕ', sub: 'ПРОДВИЖЕНИЕ' },
+  { icon: 'Clapperboard', text: 'Единая сюжетная линия' },
+  { icon: 'Heart', text: 'Эмоциональная связь' },
+  { icon: 'Users', text: 'Больше клиентов и узнаваемости' },
+  { icon: 'TrendingUp', text: 'Системное продвижение' },
 ];
 
 const problems = [
@@ -42,150 +42,131 @@ const differences = [
   { icon: 'Heart', text: 'Эмоциональная связь между брендом и аудиторией' },
   { icon: 'Star', text: 'Личный бренд как медиа-продукт, а не просто эксперт' },
   { icon: 'Target', text: 'Система контента, которая работает на результат' },
-  { icon: 'MessageCircle', text: 'Сериализация контента — аудитория ждёт продолжения' },
-];
-
-const proofs = [
-  { icon: 'MicVocal', text: 'CustDev интервью' },
-  { icon: 'ClipboardList', text: 'JTBD и карта задач' },
-  { icon: 'LineChart', text: 'Анализ рынка и конкурентов' },
-  { icon: 'Calculator', text: 'TAM / SAM / SOM расчёты' },
-  { icon: 'Rocket', text: 'MVP и тестирование' },
-  { icon: 'Sparkles', text: 'Гипотеза Product-Market Fit' },
+  { icon: 'MessageCircle', text: 'Сериализация — аудитория ждёт продолжения' },
 ];
 
 const steps = [
-  'Исследование и стратегия',
-  'Концепция и сценарий',
-  'Съёмка',
-  'Монтаж и постпродакшн',
-  'План публикации и продвижение',
-  'Аналитика и развитие сценария',
+  { n: '01', t: 'Исследование и стратегия' },
+  { n: '02', t: 'Концепция и сценарий' },
+  { n: '03', t: 'Съёмка' },
+  { n: '04', t: 'Монтаж и постпродакшн' },
+  { n: '05', t: 'План публикации' },
+  { n: '06', t: 'Аналитика и развитие сценария' },
 ];
 
 const cases = [
-  {
-    icon: 'Brain',
-    name: 'Психолог',
-    role: 'Мини-сериал · 5 серий',
-    result: '+320% клиентов',
-    metric: '2.1M просмотров сезона',
-  },
-  {
-    icon: 'Leaf',
-    name: 'Нутрициолог',
-    role: 'Мини-сериал · 6 серий',
-    result: '×4 узнаваемость',
-    metric: '48% досмотров серий',
-  },
-  {
-    icon: 'Briefcase',
-    name: 'Бизнес-коуч',
-    role: 'Мини-сериал · 4 серии',
-    result: '+90 заявок / мес',
-    metric: '870K охват аудитории',
-  },
+  { name: 'Психолог', role: 'Мини-сериал · 5 серий', result: '+320% клиентов', metric: '2.1M просмотров сезона' },
+  { name: 'Нутрициолог', role: 'Мини-сериал · 6 серий', result: '×4 узнаваемость', metric: '48% досмотров серий' },
+  { name: 'Бизнес-коуч', role: 'Мини-сериал · 4 серии', result: '+90 заявок / мес', metric: '870K охват аудитории' },
 ];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground film-grain overflow-x-hidden">
       {/* HEADER */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between h-20 px-6">
-          <div className="leading-tight">
-            <div className="font-serif text-xl tracking-[0.25em] text-gold">STORY·BRAND</div>
-            <div className="text-[9px] tracking-[0.3em] text-muted-foreground mt-0.5">
-              СТУДИЯ МИНИ-СЕРИАЛОВ<br />ДЛЯ ЛИЧНОГО БРЕНДА
-            </div>
+      <header className="fixed top-0 inset-x-0 z-50 bg-background/60 backdrop-blur-sm">
+        <div className="max-w-[1600px] mx-auto flex items-center justify-between h-24 px-8 md:px-16">
+          <div className="font-serif text-2xl tracking-[0.3em] text-foreground">
+            STORY<span className="text-gold">·</span>BRAND
           </div>
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-14">
             {nav.map((n) => (
-              <a key={n.label} href={n.href} className="text-[11px] tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">
+              <a key={n.label} href={n.href} className="text-[13px] tracking-[0.08em] text-muted-foreground hover:text-gold transition-colors duration-300">
                 {n.label}
               </a>
             ))}
           </nav>
-          <a href="#action" className="bg-primary hover:bg-primary/90 transition-colors text-primary-foreground text-[11px] tracking-[0.15em] px-6 py-3 rounded-md">
-            ОБСУДИТЬ ПРОЕКТ
+          <a href="#action" className="hidden sm:inline-block border border-gold/50 hover:border-gold hover:bg-gold hover:text-background transition-all duration-300 text-foreground text-[12px] tracking-[0.1em] px-7 py-3">
+            Обсудить проект
           </a>
         </div>
       </header>
 
       {/* HERO */}
-      <section id="about" className="relative pt-32 pb-20 min-h-screen flex items-center">
-        <div className="absolute inset-0 z-0">
-          <img src={HERO} alt="hero" className="w-full h-full object-cover object-[70%_center] opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+      <section id="about" className="relative min-h-screen flex items-end lg:items-center">
+        <div className="absolute inset-0">
+          <img src={HERO} alt="" className="w-full h-full object-cover object-[65%_20%]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-          <div className="max-w-2xl animate-fade-up">
-            <h1 className="font-serif text-5xl md:text-7xl leading-[0.95] mb-6">
-              Мини-сериалы<br />
-              <span className="text-gold italic">для личного бренда,</span>
+        <div className="relative z-10 max-w-[1600px] mx-auto w-full px-8 md:px-16 pt-40 pb-20 lg:py-0 grid lg:grid-cols-[1.3fr_1fr] gap-16 items-center">
+          <div className="animate-fade-up">
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-8">СТУДИЯ МИНИ-СЕРИАЛОВ ДЛЯ ЛИЧНОГО БРЕНДА</p>
+            <h1 className="font-serif text-6xl md:text-8xl leading-[0.92] mb-8 max-w-3xl">
+              Мини-сериалы для личного бренда
             </h1>
-            <p className="text-lg md:text-xl text-foreground/90 mb-4 max-w-xl">
-              которые привлекают больше клиентов и формируют крепкую эмоциональную связь с аудиторией.
+            <p className="text-lg text-foreground/80 mb-3 max-w-lg font-light">
+              Привлекают больше клиентов и формируют крепкую эмоциональную связь с аудиторией.
             </p>
-            <p className="text-muted-foreground mb-10 max-w-lg">
+            <p className="text-muted-foreground mb-12 max-w-md font-light">
               Превращаем контент в историю, которая удерживает внимание и даёт результат.
             </p>
-            <a href="#action" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 transition-all hover:gap-4 text-primary-foreground tracking-wide px-8 py-4 rounded-md text-sm font-medium">
-              ПОЛУЧИТЬ БЕСПЛАТНЫЙ РАЗБОР ПРОЕКТА
-              <Icon name="ArrowRight" size={18} />
+            <a href="#action" className="inline-flex items-center gap-4 bg-primary hover:bg-primary/80 transition-all duration-300 text-primary-foreground tracking-[0.1em] px-10 py-4 text-[13px]">
+              ПОЛУЧИТЬ БЕСПЛАТНЫЙ РАЗБОР
+              <Icon name="ArrowRight" size={16} />
             </a>
-            <p className="text-xs text-muted-foreground mt-4 tracking-wide">Концепция мини-сериала для вашего бренда</p>
           </div>
 
-          <div className="hidden lg:flex flex-col gap-7">
+          <div className="hidden lg:flex flex-col gap-8 border-l border-gold/20 pl-10">
             {heroFeatures.map((f, i) => (
-              <div key={i} className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: `${0.15 * i + 0.3}s` }}>
-                <div className="w-12 h-12 rounded-full border border-gold/40 flex items-center justify-center text-gold shrink-0">
-                  <Icon name={f.icon} size={20} />
-                </div>
-                <div className="text-[11px] tracking-[0.15em] leading-tight">
-                  <div className="text-foreground">{f.title}</div>
-                  <div className="text-muted-foreground">{f.sub}</div>
-                </div>
+              <div key={i} className="flex items-center gap-5 animate-fade-up" style={{ animationDelay: `${0.12 * i + 0.2}s` }}>
+                <Icon name={f.icon} size={20} className="text-gold shrink-0" strokeWidth={1.25} />
+                <span className="text-[13px] tracking-[0.05em] text-foreground/85 leading-snug">{f.text}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROBLEM + SOLUTION */}
-      <section id="how" className="grid md:grid-cols-2 border-y border-border">
-        <div className="relative p-10 md:p-16 border-r border-border">
-          <img src={IMG_COFFEE} alt="" className="absolute right-0 top-0 h-full w-1/2 object-cover opacity-20" />
-          <div className="relative">
-            <p className="text-xs tracking-[0.3em] text-gold mb-4">ПРОБЛЕМА</p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight">Обычный контент<br />больше не работает</h2>
-            <ul className="space-y-4">
+      {/* PROBLEM */}
+      <section className="relative py-32 md:py-44 px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-6">ПРОБЛЕМА</p>
+            <h2 className="font-serif text-4xl md:text-6xl mb-10 leading-[1.05]">
+              Обычный контент<br />больше не работает
+            </h2>
+            <ul className="space-y-5 mb-10">
               {problems.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-foreground/85">
-                  <Icon name="X" size={18} className="text-primary mt-1 shrink-0" />
+                <li key={p} className="flex items-start gap-4 text-foreground/75 font-light">
+                  <span className="w-6 pt-1 shrink-0">
+                    <span className="block w-3 h-px bg-muted-foreground/50" />
+                  </span>
                   <span>{p}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground mt-8 max-w-sm">
+            <p className="text-muted-foreground max-w-sm font-light italic">
               В результате — хаос в контенте и отсутствие стабильных заявок.
             </p>
           </div>
+          <div className="order-1 lg:order-2 aspect-[4/5] overflow-hidden">
+            <img src={IMG_COFFEE} alt="" className="w-full h-full object-cover" />
+          </div>
         </div>
+      </section>
 
-        <div className="relative p-10 md:p-16 bg-card">
-          <img src={IMG_SOLUTION} alt="" className="absolute right-0 top-0 h-full w-1/2 object-cover opacity-20" />
-          <div className="relative">
-            <p className="text-xs tracking-[0.3em] text-gold mb-4">РЕШЕНИЕ</p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight">Мини-сериалы<br />для личного бренда</h2>
-            <p className="text-muted-foreground mb-6 max-w-sm">Мы создаём последовательную историю о вас и вашем деле, которая:</p>
-            <ul className="space-y-4">
+      <div className="max-w-[1600px] mx-auto px-8 md:px-16"><div className="thin-rule" /></div>
+
+      {/* SOLUTION */}
+      <section className="relative py-32 md:py-44 px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="aspect-[4/5] overflow-hidden">
+            <img src={IMG_SOLUTION} alt="" className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-6">РЕШЕНИЕ</p>
+            <h2 className="font-serif text-4xl md:text-6xl mb-10 leading-[1.05]">
+              Мини-сериалы<br />для личного бренда
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-sm font-light">
+              Мы создаём последовательную историю о вас и вашем деле, которая:
+            </p>
+            <ul className="space-y-5">
               {solutions.map((s) => (
-                <li key={s} className="flex items-start gap-3 text-foreground/85">
-                  <Icon name="Check" size={18} className="text-gold mt-1 shrink-0" />
+                <li key={s} className="flex items-start gap-4 text-foreground/85 font-light">
+                  <Icon name="Check" size={16} strokeWidth={1.25} className="text-gold mt-1 shrink-0" />
                   <span>{s}</span>
                 </li>
               ))}
@@ -195,83 +176,66 @@ const Index = () => {
       </section>
 
       {/* DIFFERENCES */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto text-center">
-          <p className="text-xs tracking-[0.3em] text-gold mb-4">В ЧЁМ НАШЕ ОТЛИЧИЕ</p>
-          <h2 className="font-serif text-4xl md:text-5xl mb-16">Мы создаём не отдельные ролики, а историю</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <section className="py-32 md:py-44 px-8 md:px-16 bg-secondary/40">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="text-center mb-24">
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-6">ПОЧЕМУ МЫ ОТЛИЧАЕМСЯ</p>
+            <h2 className="font-serif text-4xl md:text-5xl max-w-2xl mx-auto leading-tight">
+              Мы создаём не отдельные ролики, а историю
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-16">
             {differences.map((d) => (
-              <div key={d.text} className="flex flex-col items-center hover-lift">
-                <div className="w-16 h-16 rounded-full border border-gold/40 flex items-center justify-center text-gold mb-5">
-                  <Icon name={d.icon} size={26} />
-                </div>
-                <p className="text-sm text-foreground/85 leading-relaxed">{d.text}</p>
+              <div key={d.text} className="flex flex-col items-center text-center">
+                <Icon name={d.icon} size={30} strokeWidth={1} className="text-gold mb-7" />
+                <p className="text-[14px] text-foreground/70 leading-relaxed font-light">{d.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CASES GALLERY */}
-      <section id="cases" className="py-24 px-6 bg-card border-y border-border">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.3em] text-gold mb-4">ГАЛЕРЕЯ ПРОЕКТОВ</p>
-            <h2 className="font-serif text-4xl md:text-5xl">Готовые мини-сериалы<br />и результаты клиентов</h2>
+      {/* PROCESS */}
+      <section id="process" className="py-32 md:py-44 px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-20">
+          <div>
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-6">КАК МЫ РАБОТАЕМ</p>
+            <h2 className="font-serif text-4xl md:text-6xl mb-8 leading-[1.05]">
+              От идеи до сериала<br />под ключ
+            </h2>
+            <p className="text-muted-foreground max-w-sm font-light">
+              Шесть последовательных этапов — от глубокого исследования бренда до аналитики и развития сюжета сезона.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {cases.map((c) => (
-              <div key={c.name} className="group relative rounded-lg overflow-hidden hover-lift border border-border bg-background p-8 flex flex-col">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 rounded-full border border-gold/40 flex items-center justify-center text-gold">
-                    <Icon name={c.icon} size={24} />
-                  </div>
-                  <div className="bg-primary/90 text-primary-foreground text-xs tracking-wide px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                    <Icon name="TrendingUp" size={14} />
-                    {c.result}
-                  </div>
-                </div>
-                <h3 className="font-serif text-3xl mb-1">{c.name}</h3>
-                <p className="text-muted-foreground text-sm mb-8">{c.role}</p>
-                <div className="mt-auto pt-6 border-t border-border flex items-center gap-2 text-gold text-sm">
-                  <Icon name="PlayCircle" size={18} />
-                  {c.metric}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROOFS + STEPS */}
-      <section id="reviews" className="grid lg:grid-cols-2">
-        <div className="relative p-10 md:p-16 border-r border-border">
-          <img src={IMG_DESK} alt="" className="absolute inset-0 w-full h-full object-cover opacity-15" />
-          <div className="relative">
-            <p className="text-xs tracking-[0.3em] text-gold mb-4">ДОКАЗАТЕЛЬСТВА</p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-10 leading-tight">Мы работаем на основе данных и проверенных подходов</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-              {proofs.map((p) => (
-                <div key={p.text} className="flex flex-col items-start">
-                  <div className="w-11 h-11 rounded-full border border-gold/40 flex items-center justify-center text-gold mb-3">
-                    <Icon name={p.icon} size={18} />
-                  </div>
-                  <p className="text-sm text-foreground/85">{p.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="p-10 md:p-16 bg-card">
-          <p className="text-xs tracking-[0.3em] text-gold mb-4">КАК МЫ РАБОТАЕМ</p>
-          <h2 className="font-serif text-4xl md:text-5xl mb-10 leading-tight">От идеи до сериала<br />под ключ</h2>
-          <div className="space-y-5">
+          <div>
             {steps.map((s, i) => (
-              <div key={s} className="flex items-center gap-5 group">
-                <span className="font-serif text-2xl text-gold w-10 shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                <div className="h-px flex-1 max-w-[20px] bg-gold/40" />
-                <span className="flex-1 text-foreground/90 group-hover:text-gold transition-colors">{s}</span>
+              <div key={s.n} className="flex items-center gap-8 py-6">
+                <span className="font-serif text-3xl text-gold/70 w-12 shrink-0">{s.n}</span>
+                <span className="flex-1 text-foreground/85 font-light text-lg">{s.t}</span>
+              </div>
+            )).reduce((acc, el, i) => {
+              acc.push(el);
+              if (i < steps.length - 1) acc.push(<div key={`d${i}`} className="thin-rule" />);
+              return acc;
+            }, [] as JSX.Element[])}
+          </div>
+        </div>
+      </section>
+
+      {/* CASES */}
+      <section id="cases" className="py-32 md:py-44 px-8 md:px-16 bg-secondary/40">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="text-center mb-24">
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-6">РЕЗУЛЬТАТЫ</p>
+            <h2 className="font-serif text-4xl md:text-5xl">Готовые мини-сериалы</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-x-16 gap-y-16">
+            {cases.map((c) => (
+              <div key={c.name} className="text-center md:text-left">
+                <div className="font-serif text-5xl text-gold mb-6">{c.result}</div>
+                <h3 className="text-xl mb-1">{c.name}</h3>
+                <p className="text-muted-foreground text-sm mb-4 font-light">{c.role}</p>
+                <p className="text-[13px] text-foreground/60 font-light tracking-wide">{c.metric}</p>
               </div>
             ))}
           </div>
@@ -279,48 +243,37 @@ const Index = () => {
       </section>
 
       {/* ACTION */}
-      <section id="action" className="relative py-28 px-6 overflow-hidden">
-        <img src={HERO} alt="" className="absolute right-0 top-0 h-full w-1/2 object-cover object-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60" />
-        <div className="container mx-auto relative z-10 max-w-3xl">
-          <p className="text-xs tracking-[0.3em] text-gold mb-4">ДЕЙСТВИЕ</p>
-          <h2 className="font-serif text-4xl md:text-6xl mb-6 leading-tight">Запишитесь на бесплатный разбор вашего проекта</h2>
-          <p className="text-muted-foreground mb-10 max-w-lg">
-            На встрече мы предложим концепцию мини-сериала, покажем структуру первого сезона и рассчитаем стоимость пилота.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-6 mb-12">
-            {[
-              { icon: 'CalendarClock', t: '30–40 минут', s: 'онлайн-встреча' },
-              { icon: 'FileText', t: 'Концепция', s: 'мини-сериала' },
-              { icon: 'BarChart3', t: 'Расчёт стоимости', s: 'пилотного проекта' },
-            ].map((x) => (
-              <div key={x.t} className="flex items-start gap-3">
-                <div className="w-11 h-11 rounded-full border border-gold/40 flex items-center justify-center text-gold shrink-0">
-                  <Icon name={x.icon} size={18} />
-                </div>
-                <div className="text-sm">
-                  <div className="text-foreground">{x.t}</div>
-                  <div className="text-muted-foreground">{x.s}</div>
-                </div>
-              </div>
-            ))}
+      <section id="action" className="relative min-h-screen flex items-center py-32">
+        <div className="absolute inset-0">
+          <img src={IMG_ACTION} alt="" className="w-full h-full object-cover object-[75%_center]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/15" />
+        </div>
+        <div className="relative z-10 max-w-[1600px] mx-auto w-full px-8 md:px-16">
+          <div className="max-w-xl">
+            <p className="text-[13px] tracking-[0.35em] text-gold mb-6">НАЧАТЬ</p>
+            <h2 className="font-serif text-5xl md:text-7xl mb-8 leading-[1.02]">
+              Запишитесь на бесплатный разбор
+            </h2>
+            <p className="text-muted-foreground mb-12 max-w-md font-light">
+              Определим формат, предложим концепцию и рассчитаем стоимость пилотного сезона.
+            </p>
+            <a href="#" className="inline-flex items-center gap-4 bg-primary hover:bg-primary/80 transition-all duration-300 text-primary-foreground tracking-[0.1em] px-10 py-4 text-[13px]">
+              ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ
+              <Icon name="ArrowRight" size={16} />
+            </a>
           </div>
-          <a href="#" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 transition-all hover:gap-4 text-primary-foreground tracking-wide px-8 py-4 rounded-md text-sm font-medium">
-            ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ
-            <Icon name="ArrowRight" size={18} />
-          </a>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer id="faq" className="border-t border-border py-10 px-6">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
-          <div className="font-serif text-lg tracking-[0.25em] text-gold">STORY·BRAND</div>
-          <p>© 2024 Студия мини-сериалов для личного бренда. История, которая работает на ваш бренд.</p>
-          <div className="flex items-center gap-4">
+      <footer className="px-8 md:px-16 py-12 border-t border-border/60">
+        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[13px] text-muted-foreground font-light">
+          <div className="font-serif text-lg tracking-[0.25em] text-foreground">STORY·BRAND</div>
+          <p>© 2024 Студия мини-сериалов для личного бренда</p>
+          <div className="flex items-center gap-6">
             {['Instagram', 'Send', 'Youtube'].map((s) => (
-              <a key={s} href="#" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:text-gold hover:border-gold transition-colors">
-                <Icon name={s} size={16} />
+              <a key={s} href="#" className="hover:text-gold transition-colors duration-300">
+                <Icon name={s} size={17} strokeWidth={1.25} />
               </a>
             ))}
           </div>
