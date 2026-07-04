@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Split brandbook photos",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"urls": "object"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

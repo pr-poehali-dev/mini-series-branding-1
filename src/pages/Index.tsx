@@ -1,8 +1,10 @@
 import Icon from '@/components/ui/icon';
 
-const HERO = 'https://cdn.poehali.dev/projects/618b8948-269c-40a7-94b5-dcdcf6308751/files/c50bfda3-e89f-4ab4-812b-69e0dae7cbec.jpg';
-const IMG_DESK = 'https://cdn.poehali.dev/projects/618b8948-269c-40a7-94b5-dcdcf6308751/files/a0fc9690-dd0e-4162-a6c6-b1ab426c971c.jpg';
-const IMG_COFFEE = 'https://cdn.poehali.dev/projects/618b8948-269c-40a7-94b5-dcdcf6308751/files/781e1d17-1df0-4f51-b822-27b437c6e29f.jpg';
+const CDN = 'https://cdn.poehali.dev/projects/618b8948-269c-40a7-94b5-dcdcf6308751/bucket/brandbook';
+const HERO = `${CDN}/portrait-1.jpg`;
+const IMG_COFFEE = `${CDN}/portrait-2.jpg`;
+const IMG_SOLUTION = `${CDN}/portrait-3.jpg`;
+const IMG_DESK = `${CDN}/portrait-5.jpg`;
 
 const nav = [
   { label: 'О НАС', href: '#about' },
@@ -63,23 +65,23 @@ const steps = [
 
 const cases = [
   {
-    img: HERO,
-    name: 'Ирина Соколова',
-    role: 'Психолог · 5 серий',
+    icon: 'Brain',
+    name: 'Психолог',
+    role: 'Мини-сериал · 5 серий',
     result: '+320% клиентов',
     metric: '2.1M просмотров сезона',
   },
   {
-    img: IMG_COFFEE,
-    name: 'Мария Дронова',
-    role: 'Нутрициолог · 6 серий',
+    icon: 'Leaf',
+    name: 'Нутрициолог',
+    role: 'Мини-сериал · 6 серий',
     result: '×4 узнаваемость',
     metric: '48% досмотров серий',
   },
   {
-    img: IMG_DESK,
-    name: 'Анна Верес',
-    role: 'Бизнес-коуч · 4 серии',
+    icon: 'Briefcase',
+    name: 'Бизнес-коуч',
+    role: 'Мини-сериал · 4 серии',
     result: '+90 заявок / мес',
     metric: '870K охват аудитории',
   },
@@ -175,7 +177,7 @@ const Index = () => {
         </div>
 
         <div className="relative p-10 md:p-16 bg-card">
-          <img src={HERO} alt="" className="absolute right-0 top-0 h-full w-1/2 object-cover opacity-20" />
+          <img src={IMG_SOLUTION} alt="" className="absolute right-0 top-0 h-full w-1/2 object-cover opacity-20" />
           <div className="relative">
             <p className="text-xs tracking-[0.3em] text-gold mb-4">РЕШЕНИЕ</p>
             <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight">Мини-сериалы<br />для личного бренда</h2>
@@ -219,22 +221,21 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {cases.map((c) => (
-              <div key={c.name} className="group relative rounded-lg overflow-hidden hover-lift border border-border">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img src={c.img} alt={c.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-                </div>
-                <div className="absolute top-4 right-4 bg-primary/90 backdrop-blur text-primary-foreground text-xs tracking-wide px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                  <Icon name="TrendingUp" size={14} />
-                  {c.result}
-                </div>
-                <div className="absolute bottom-0 inset-x-0 p-6">
-                  <div className="flex items-center gap-2 text-gold text-xs mb-2">
-                    <Icon name="PlayCircle" size={16} />
-                    {c.metric}
+              <div key={c.name} className="group relative rounded-lg overflow-hidden hover-lift border border-border bg-background p-8 flex flex-col">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-14 h-14 rounded-full border border-gold/40 flex items-center justify-center text-gold">
+                    <Icon name={c.icon} size={24} />
                   </div>
-                  <h3 className="font-serif text-2xl mb-1">{c.name}</h3>
-                  <p className="text-muted-foreground text-sm">{c.role}</p>
+                  <div className="bg-primary/90 text-primary-foreground text-xs tracking-wide px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                    <Icon name="TrendingUp" size={14} />
+                    {c.result}
+                  </div>
+                </div>
+                <h3 className="font-serif text-3xl mb-1">{c.name}</h3>
+                <p className="text-muted-foreground text-sm mb-8">{c.role}</p>
+                <div className="mt-auto pt-6 border-t border-border flex items-center gap-2 text-gold text-sm">
+                  <Icon name="PlayCircle" size={18} />
+                  {c.metric}
                 </div>
               </div>
             ))}
